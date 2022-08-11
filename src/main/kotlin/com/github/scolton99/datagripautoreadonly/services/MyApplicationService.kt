@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.scolton99.datagripautoreadonly.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.scolton99.datagripautoreadonly.MyBundle
 
 class MyApplicationService {
 
