@@ -5,14 +5,23 @@
     <vendor>scolton99</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.database</depends>>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.scolton99.datagripautoreadonly.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.scolton99.datagripautoreadonly.services.MyProjectService"/>
+        <notificationGroup displayType="BALLOON" id="AutoRO Notifications" />
     </extensions>
 
+    <actions>
+        <group>
+            <separator />
+            <group id="tech.scolton.autoro.actions.UnlockActionGroup" class="tech.scolton.autoro.actions.UnlockActionGroup"
+                   text="Temporary Unlock" popup="true" icon="AllIcons.General.ExclMark" />
+            <add-to-group group-id="DatabaseViewPopupMenu" anchor="last" />
+        </group>
+    </actions>
+
     <applicationListeners>
-        <listener class="com.github.scolton99.datagripautoreadonly.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="tech.scolton.autoro.listeners.ProjectManagerListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
 </idea-plugin>

@@ -108,4 +108,8 @@ tasks {
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
         channels.set(listOf(properties("pluginVersion").split('-').getOrElse(1) { "default" }.split('.').first()))
     }
+
+    runIde {
+        ideDir.set(file("C:\\Users\\sdc2637\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-1\\222.3345.118"))
+    }
 }
