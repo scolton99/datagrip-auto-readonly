@@ -18,7 +18,7 @@ import com.intellij.util.ObjectUtils
 
 fun getDbDataSourceFromAction(e: AnActionEvent): DbDataSource? {
     val system = ObjectUtils.coalesce(
-        DataGridUtil.getDatabaseSystem(e.getData(DatabaseDataKeys.DATA_GRID_KEY)), DbImplUtil.getForcedDataSource(
+        DbImplUtil.getForcedDataSource(
             e.getData(CommonDataKeys.PSI_FILE)
         ), PsiTreeUtil.getParentOfType(
             e.getData(CommonDataKeys.PSI_ELEMENT),
